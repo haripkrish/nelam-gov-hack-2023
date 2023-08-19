@@ -1,7 +1,7 @@
 select
   '2021-01-01' as year,
   organisation_name,
-  cast(identifying_details as int64) as abn,
+  safe_cast(identifying_details as int64) as abn,
   total_scope_1_emissions__t_co2_e_ as scope_1_in_t_co2_e,
   total_scope_2_emissions__t_co2_e_ as scope_2_in_t_co2_e,
   total_scope_1_emissions__t_co2_e_ + total_scope_2_emissions__t_co2_e_ as total_emissions_in_t_co2_e,
@@ -14,7 +14,7 @@ union all
 select
   '2020-01-01' as year,
   organisation_name,
-  cast(identifying_details as int64)as abn,
+  safe_cast(identifying_details as int64)as abn,
   total_scope_1_emissions__t_co2_e_ as scope_1_in_t_co2_e,
   total_scope_2_emissions__t_co2_e_ as scope_2_in_t_co2_e,
   total_scope_1_emissions__t_co2_e_ + total_scope_2_emissions__t_co2_e_ as total_emissions_in_t_co2_e,
@@ -79,7 +79,7 @@ union all
 select
   '2015-01-01' as year,
   controlling_corporation,
-  cast(abn as int64) as abn,
+  safe_cast(abn as int64) as abn,
   total_scope_1_emissions__t_co2_e_ as scope_1_in_t_co2_e,
   total_scope_2_emissions__t_co2_e_ as scope_2_in_t_co2_e,
   total_scope_1_emissions__t_co2_e_ + total_scope_2_emissions__t_co2_e_ as total_emissions_in_t_co2_e,
@@ -105,7 +105,7 @@ union all
 select
   '2013-01-01' as year,
   controlling_corporation,
-  cast(abn as int64) as abn,
+  safe_cast(abn as int64) as abn,
   total_scope_1_emissions__t_co2_e_ as scope_1_in_t_co2_e,
   total_scope_2_emissions__t_co2_e_ as scope_2_in_t_co2_e,
   total_scope_1_emissions__t_co2_e_ + total_scope_2_emissions__t_co2_e_ as total_emissions_in_t_co2_e,
@@ -118,7 +118,7 @@ union all
 select
   '2012-01-01' as year,
   controlling_corporation_name,
-  cast(abn as int64) as abn,
+  safe_cast(abn as int64) as abn,
   corporate_total_scope_1_emission__t_co2_e_ as scope_1_in_t_co2_e,
   corporate_total_scope_2_emission__t_co2_e_ as scope_2_in_t_co2_e,
   corporate_total_scope_1_emission__t_co2_e_ + corporate_total_scope_2_emission__t_co2_e_ as total_emissions_in_t_co2_e,
@@ -131,7 +131,7 @@ union all
 select
   '2011-01-01' as year,
   registered_corporations,
-  cast(abn as int64) as abn,
+  safe_cast(abn as int64) as abn,
   scope_1 as scope_1_in_t_co2_e,
   scope_2 as scope_2_in_t_co2_e,
   scope_1_2 as total_emissions_in_t_co2_e,
@@ -144,7 +144,7 @@ union all
 select
   '2010-01-01' as year,
   registered_corporations,
-  cast(abn as int64) as abn,
+  safe_cast(abn as int64) as abn,
   total_scope_1_greenhouse_gas_emissions__t_co2_e_ as scope_1_in_t_co2_e,
   total_scope_2_greenhouse_gas_emissions__t_co2_e_ as scope_2_in_t_co2_e,
   total_scope_1_greenhouse_gas_emissions__t_co2_e_ + total_scope_2_greenhouse_gas_emissions__t_co2_e_ as total_emissions_in_t_co2_e,
@@ -157,7 +157,7 @@ union all
 select
   '2009-01-01' as year,
   registered_corporations,
-  cast(abn as int64) as abn,
+  safe_cast(abn as int64) as abn,
   total_scope_1_greenhouse_gas_emissions__t_co2_3_ as scope_1_in_t_co2_e,
   total_scope_2_greenhouse_gas_emissions__t_co2_3_ as scope_2_in_t_co2_e,
   total_scope_1_greenhouse_gas_emissions__t_co2_3_ + total_scope_2_greenhouse_gas_emissions__t_co2_3_ as total_emissions_in_t_co2_e,
@@ -170,7 +170,7 @@ union all
 select
   '2008-01-01' as year,
   registered_corporations,
-  cast(abn as int64) as abn,
+  safe_cast(abn as int64) as abn,
   total_scope_1_greenhouse_gas_emissions__t_co2_e_ as scope_1_in_t_co2_e,
   total_scope_2_greenhouse_gas_emissions__t_co2_e_ as scope_2_in_t_co2_e,
   total_scope_1_greenhouse_gas_emissions__t_co2_e_ + total_scope_2_greenhouse_gas_emissions__t_co2_e_ as total_emissions_in_t_co2_e,
