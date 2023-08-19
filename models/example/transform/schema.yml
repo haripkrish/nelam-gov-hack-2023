@@ -1,0 +1,6 @@
+
+version: 2
+
+models:
+    - name: intermediate_emissions_electricity_sector_2012_13
+      description: "Emision data for electricity sector 2012-13"  
