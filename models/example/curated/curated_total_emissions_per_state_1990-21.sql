@@ -1,0 +1,1 @@
+select * from gov-hack-2023.raw_data.emissions_by_state_in_mt
